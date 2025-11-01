@@ -1,16 +1,16 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const connectDB = require('./config/db');
+const { connectDB } = require('./config/db');
 
 // Load env variables
 dotenv.config({ path: './.env' });
 
-// Connect to database
-connectDB();
-
 // Initialize express app
 const app = express();
+
+// Connect to database (non-blocking)
+connectDB().catch(err => console.warn('DB Connection failed, continuing anyway...'));
 
 // Middleware
 app.use(cors({
