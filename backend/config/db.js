@@ -4,8 +4,10 @@ const mongoose = require('mongoose');
 let usesMockDB = false;
 
 const connectDB = async () => {
+  const mongoURI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/auth_db';
+
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI, {
+    const conn = await mongoose.connect(mongoURI, {
       serverSelectionTimeoutMS: 5000,
       socketTimeoutMS: 45000,
     });
