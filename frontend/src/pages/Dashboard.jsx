@@ -67,9 +67,9 @@ const Dashboard = () => {
       <nav className="dashboard-navbar">
         <div className="navbar-container">
           <div className="navbar-logo">
-            <h1 className="logo-text">JOB BAZAR</h1>
+            <h1 className="logo-text">GetHired</h1>
           </div>
-          
+
           <div className="navbar-user">
             <div className="user-profile-btn" onClick={() => setShowDropdown(!showDropdown)}>
               <div className="user-avatar">
